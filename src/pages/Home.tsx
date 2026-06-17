@@ -2,7 +2,7 @@ const WHATSAPP_NUMBER = "5562986286895";
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Olá, Vinicius. Gostaria de saber mais sobre o atendimento psicológico."
 );
-
+import { Helmet } from "react-helmet-async";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
 function Header() {
@@ -248,9 +248,17 @@ function Footer() {
   );
 }
 
-export default function home() {
+export default function Home() {
   return (
     <>
+      <Helmet>
+        <title>Vinicius Rodrigues | Psicólogo Psicoterapeuta Online</title>
+        <meta
+          name="description"
+          content="Atendimento psicológico online com Vinicius Rodrigues, psicólogo psicoterapeuta CRP 09/12077. Um espaço de escuta cuidadosa, ética e profissional."
+        />
+      </Helmet>
+
       <Header />
       <Hero />
       <VideoSection />

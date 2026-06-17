@@ -4,7 +4,7 @@ const WHATSAPP_MESSAGE = encodeURIComponent(
 );
 
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
-
+import { Helmet } from "react-helmet-async";
 const faqs = [
   {
     question: "Como funciona o atendimento online?",
@@ -35,7 +35,16 @@ const faqs = [
 
 export default function Faq() {
   return (
-    <main className="min-h-screen bg-[#f6f1ea] px-6 py-20 text-[#171717]">
+    <>
+      <Helmet>
+        <title>Perguntas Frequentes | Vinicius Rodrigues Psicólogo Online</title>
+        <meta
+          name="description"
+          content="Veja dúvidas comuns sobre o atendimento psicológico online com Vinicius Rodrigues, psicólogo psicoterapeuta CRP 09/12077."
+        />
+      </Helmet>
+
+      <main className="min-h-screen bg-[#f6f1ea] px-6 py-20 text-[#171717]">
       <section className="mx-auto max-w-4xl">
         <a
           href="/"
@@ -94,6 +103,7 @@ export default function Faq() {
           </a>
         </div>
       </section>
-    </main>
+          </main>
+    </>
   );
 }
