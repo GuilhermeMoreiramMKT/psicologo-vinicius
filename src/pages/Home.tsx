@@ -28,16 +28,16 @@ function Header() {
           <a href="#sobre" className="transition hover:text-[#8a5a3b]">
             Sobre
           </a>
-          <a href="#como-funciona" className="transition hover:text-[#8a5a3b]">
+          <a href="/como-funciona" className="transition hover:text-[#8a5a3b]">
             Como funciona
           </a>
-          <a href="#abordagem" className="transition hover:text-[#8a5a3b]">
+          <a href="/abordagem" className="transition hover:text-[#8a5a3b]">
             Abordagem
           </a>
-          <a href="#/faq" className="transition hover:text-[#8a5a3b]">
+          <a href="/faq" className="transition hover:text-[#8a5a3b]">
             Perguntas frequentes
           </a>
-          <a href="#contato" className="transition hover:text-[#8a5a3b]">
+          <a href="/contato" className="transition hover:text-[#8a5a3b]">
             Contato
           </a>
         </nav>
