@@ -184,7 +184,7 @@ function VideoSection() {
           </p>
 
           <h2 className="font-serif text-4xl font-normal leading-tight tracking-[-0.03em] text-[#171717] md:text-5xl">
-            Motivos para você ser atendido por mim
+            Psicoterapeuta Vinicius Rodrigues
           </h2>
 
           <div className="my-7 h-px w-20 bg-[#8a5a3b]" />
@@ -202,12 +202,6 @@ Botão Agendar minha Primeira Sessão
             </p>
           </div>
 
-          <a
-            href="#contato"
-            className="mt-9 inline-flex rounded-full border border-[#8a5a3b] px-7 py-3 text-sm font-medium text-[#6f432b] transition hover:bg-[#efe8df]"
-          >
-            Mais sobre mim →
-          </a>
         </div>
       </div>
     </section>
