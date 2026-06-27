@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 const WHATSAPP_NUMBER = "5562986286895";
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Olá, Vinicius. Gostaria de saber mais sobre o atendimento psicológico."
@@ -6,8 +8,27 @@ import { Helmet } from "react-helmet-async";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
 function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 40);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed left-0 top-0 z-50 w-full border-b border-[#bfae9e]/20 bg-[#f6f1ea]/90 backdrop-blur-md">
+    <header
+      className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${
+        isScrolled
+          ? "border-b border-[#bfae9e]/20 bg-[#f6f1ea]/95 shadow-sm backdrop-blur-md"
+          : "border-b border-transparent bg-transparent"
+      }`}
+    >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <a href="#inicio" className="flex items-center gap-4" aria-label="Início">
           <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#8a5a3b] font-serif text-2xl text-[#6f432b]">
@@ -65,25 +86,45 @@ function Header() {
     </header>
   );
 }
-
 function Hero() {
   return (
-    <main id="inicio" className="min-h-screen bg-[#f6f1ea] pt-24">
-      <section className="mx-auto grid min-h-[calc(100vh-96px)] max-w-7xl grid-cols-1 items-center gap-12 px-6 py-12 lg:grid-cols-[1fr_0.85fr] lg:py-0">
-        <div className="max-w-2xl animate-[fadeUp_0.8s_ease-out]">
+    <main
+      id="inicio"
+      className="relative min-h-screen overflow-hidden bg-[#f6f1ea]"
+    >
+      <div className="absolute inset-y-0 right-0 z-0 hidden w-[70vw] overflow-hidden lg:block">
+        <img
+          src="/images/foto-vinicius.jpg"
+          alt="Vinicius Rodrigues, psicólogo psicoterapeuta"
+          className="absolute inset-0 h-full w-full object-cover object-[68%_45%]"
+        />
+
+        <div className="absolute inset-x-0 bottom-0 h-[18%] bg-gradient-to-t from-[#f6f1ea]/45 to-transparent" />
+      </div>
+<div
+  className="absolute inset-y-0 left-0 z-10 hidden w-full lg:block"
+  style={{
+    background:
+      "linear-gradient(90deg, #f6f1ea 0%, #f6f1ea 34%, rgba(246,241,234,0.88) 36%, rgba(246,241,234,0.28) 43%, rgba(246,241,234,0) 46%)",
+  }}
+/>
+
+      <section className="relative z-20 flex min-h-screen items-center px-6 pt-28 lg:px-[8vw] lg:pt-0">
+        <div className="relative z-30 max-w-[560px] animate-[fadeUp_0.8s_ease-out]">
           <p className="mb-7 text-xs font-semibold uppercase tracking-[0.35em] text-[#6f432b]">
             Psicoterapia com seriedade e profundidade
           </p>
 
-          <h1 className="font-serif text-5xl font-normal leading-[1.05] tracking-[-0.04em] text-[#171717] md:text-6xl lg:text-7xl">
+          <h1 className="font-serif text-5xl font-normal leading-[1.05] tracking-[-0.04em] text-[#171717] md:text-6xl lg:text-[64px]">
             Aqui, sua história não será medida, comparada ou julgada
           </h1>
 
           <div className="my-8 h-px w-24 bg-[#8a5a3b]" />
 
-          <p className="max-w-xl text-lg leading-8 text-[#3e3a35]">
-            Se você sente que ninguém te entende ou tem medo do que as pessoas vão pensar se souberem o que você realmente sente, este é o seu espaço. Um processo terapêutico focado em compreender você.
-
+          <p className="max-w-[520px] text-lg leading-8 text-[#3e3a35]">
+            Se você sente que ninguém te entende ou tem medo do que as pessoas
+            vão pensar se souberem o que você realmente sente, este é o seu
+            espaço. Um processo terapêutico focado em compreender você.
           </p>
 
           <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center">
@@ -109,17 +150,6 @@ function Hero() {
             </div>
           </div>
         </div>
-
-        <div className="relative min-h-[520px] overflow-hidden rounded-t-[180px] bg-[#e8ded2] lg:min-h-[680px] lg:rounded-t-[240px]">
-          <div className="absolute inset-0 bg-[linear-gradient(145deg,#efe8df,#d8c8b8)]" />
-          <div className="absolute inset-x-10 bottom-0 top-20 rounded-t-[180px] bg-[#cbb7a4]" />
-          <div className="absolute bottom-0 left-1/2 h-[78%] w-[54%] -translate-x-1/2 rounded-t-full bg-[#9f7a62]" />
-          <div className="absolute left-1/2 top-24 h-32 w-32 -translate-x-1/2 rounded-full bg-[#b8937b]" />
-          <div className="absolute bottom-0 left-1/2 h-[48%] w-[70%] -translate-x-1/2 rounded-t-[140px] bg-[#6f432b]" />
-          <div className="absolute bottom-10 left-10 right-10 rounded-3xl border border-white/30 bg-white/20 p-5 text-center text-sm text-white backdrop-blur-md">
-            Imagem temporária do profissional
-          </div>
-        </div>
       </section>
     </main>
   );
@@ -129,25 +159,17 @@ function VideoSection() {
   return (
     <section id="sobre" className="bg-[#fffdfc] px-6 py-24">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="group overflow-hidden rounded-[2rem] bg-[#171717] shadow-2xl shadow-black/10">
-          <div className="relative aspect-video bg-[linear-gradient(135deg,#6f432b,#bfae9e)]">
-            <div className="absolute inset-0 bg-black/20" />
-
-            <button
-              className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-2xl text-[#6f432b] transition group-hover:scale-105"
-              aria-label="Reproduzir vídeo de apresentação"
-            >
-              ▶
-            </button>
-
-            <div className="absolute bottom-0 left-0 right-0 flex items-center gap-4 bg-black/45 px-6 py-4">
-              <div className="h-2 flex-1 rounded-full bg-white/25">
-                <div className="h-2 w-1/3 rounded-full bg-white" />
-              </div>
-              <span className="text-xs text-white/80">00:00</span>
-            </div>
-          </div>
-        </div>
+       <div className="overflow-hidden rounded-[2rem] bg-[#171717] shadow-2xl shadow-black/10">
+  <div className="aspect-video w-full">
+  <iframe
+  className="h-full w-full"
+  src="https://www.youtube.com/embed/G-qWD7WXTa4"
+  title="Vídeo de apresentação de Vinicius Rodrigues"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowFullScreen
+/>
+  </div>
+</div>
 
         <div>
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#6f432b]">
@@ -184,7 +206,119 @@ Botão Agendar minha Primeira Sessão
     </section>
   );
 }
+function FormationSection() {
+  const experiences = [
+    "Atuação na rede pública de saúde mental, em trabalho multiprofissional junto a CAPS, CREAS, hospitais, clínicas psiquiátricas e articulação com a Justiça e o Juizado de Menores.",
+    "Experiência em supervisão de estágio, acompanhando estudantes de psicologia no desenvolvimento clínico, técnico e ético dos atendimentos.",
+    "Atuação em atendimentos de urgência, especialmente em situações de luto, sofrimento intenso e graves crises emocionais.",
+    "Psicoterapia individual com adultos, com atenção às dificuldades nos relacionamentos, ansiedade, depressão e outras questões emocionais.",
+    "Trabalho multiprofissional em avaliação psicológica, em parceria com neuropsicólogos e psiquiatras.",
+    "Atendimento home care a famílias em contexto domiciliar, oferecendo suporte psicológico em momentos de vulnerabilidade.",
+    "Atuação em psicologia organizacional, com atendimentos voltados a empresas, microempreendedores e bem-estar emocional no ambiente de trabalho.",
+    "Experiência clínica sensível às questões vividas pela comunidade LGBTQIA+.",
+  ];
 
+  const academicActivities = [
+    "Palestra no CIEE sobre depressão, com foco em acolhimento e compreensão do sofrimento depressivo.",
+    "Palestra na Universidade Estadual de Goiás sobre Psicologia Social e o impacto das relações no desenvolvimento emocional.",
+    "Reconhecimento acadêmico durante os estágios da graduação, com abordagem utilizada por supervisores como referência para a turma.",
+  ];
+
+  return (
+    <section className="bg-[#f6f1ea] px-6 py-24">
+      <div className="mx-auto max-w-7xl">
+        <div className="max-w-6xl">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#6f432b]">
+            Formação e experiência profissional
+          </p>
+
+          <h2 className="font-serif text-4xl font-normal leading-tight tracking-[-0.03em] text-[#171717] md:text-5xl lg:text-6xl">
+            Uma trajetória construída na clínica, na saúde mental e no cuidado com pessoas.
+          </h2>
+
+          <div className="my-8 h-px w-24 bg-[#8a5a3b]" />
+
+          <p className="max-w-4xl text-lg leading-8 text-[#3e3a35]">
+            A prática clínica de Vinicius Rodrigues reúne mais de 10 anos de experiência
+            no atendimento psicológico, com foco em adultos que enfrentam dificuldades
+            emocionais, conflitos nos relacionamentos, ansiedade, depressão e processos
+            de autoconhecimento.
+          </p>
+        </div>
+
+        <div className="mt-16 space-y-7">
+          <article className="rounded-[2rem] border border-[#bfae9e]/40 bg-[#fffdfc] p-8 shadow-sm md:p-10">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#6f432b]">
+              Formação
+            </p>
+
+            <h3 className="font-serif text-3xl font-normal text-[#171717] md:text-4xl">
+              Psicólogo Clínico - CRP 09/12077
+            </h3>
+
+           <ul className="mt-8 space-y-4">
+
+
+  <li className="rounded-2xl border border-[#bfae9e]/40 bg-[#efe8df]/70 p-5 text-base leading-8 text-[#3e3a35]">
+    Formação complementar em Psicanálise pela Casa Freud.
+  </li>
+
+  <li className="rounded-2xl border border-[#bfae9e]/40 bg-[#efe8df]/70 p-5 text-base leading-8 text-[#3e3a35]">
+    Formação em Psicopatologia.
+  </li>
+
+  <li className="rounded-2xl border border-[#bfae9e]/40 bg-[#efe8df]/70 p-5 text-base leading-8 text-[#3e3a35]">
+    Mais de 10 anos de atuação na psicologia clínica.
+  </li>
+</ul>
+          </article>
+
+          <article className="rounded-[2rem] border border-[#bfae9e]/40 bg-[#efe8df] p-8 shadow-sm md:p-10">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#6f432b]">
+              Experiência clínica e profissional
+            </p>
+
+            <h3 className="font-serif text-3xl font-normal text-[#171717] md:text-4xl">
+              Atuação em diferentes contextos de cuidado, escuta e saúde mental.
+            </h3>
+
+            <ul className="mt-8 space-y-5">
+              {experiences.map((item) => (
+                <li
+                  key={item}
+                  className="rounded-2xl border border-[#bfae9e]/40 bg-[#fffdfc]/70 p-5 text-base leading-8 text-[#3e3a35]"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </article>
+
+         <article className="rounded-[2rem] border border-[#bfae9e]/40 bg-[#efe8df] p-8 shadow-sm md:p-10">
+  <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#6f432b]">
+    Palestras e atividades acadêmicas
+  </p>
+
+  <h3 className="font-serif text-3xl font-normal text-[#171717] md:text-4xl">
+    Participação em espaços de formação, ensino e troca profissional.
+  </h3>
+
+  <ul className="mt-8 space-y-4">
+    {academicActivities.map((item) => (
+      <li
+        key={item}
+        className="rounded-2xl border border-[#bfae9e]/40 bg-[#fffdfc]/70 p-5 text-base leading-8 text-[#3e3a35]"
+      >
+        {item}
+      </li>
+    ))}
+  </ul>
+</article>
+        </div>
+      </div>
+    </section>
+  );
+}
 function Footer() {
   return (
     <footer id="contato" className="bg-[#efe8df] px-6 py-16">
@@ -262,6 +396,7 @@ export default function Home() {
       <Header />
       <Hero />
       <VideoSection />
+      <FormationSection />
       <Footer />
     </>
   );
