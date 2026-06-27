@@ -1,4 +1,6 @@
 import { Helmet } from "react-helmet-async";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 function FormacaoExperiencia() {
   const experiences = [
@@ -28,7 +30,9 @@ function FormacaoExperiencia() {
         />
       </Helmet>
 
-      <main className="min-h-screen bg-[#f6f1ea] px-6 py-20 text-[#171717]">
+<Header />
+
+<main className="min-h-screen bg-[#f6f1ea] px-6 pb-20 pt-32 text-[#171717]">
         <section className="mx-auto max-w-7xl">
           <a
             href="/"
@@ -128,7 +132,9 @@ function FormacaoExperiencia() {
             </article>
           </div>
         </section>
-      </main>
+           </main>
+
+      <Footer />
     </>
   );
 }

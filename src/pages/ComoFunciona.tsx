@@ -1,4 +1,6 @@
 import { Helmet } from "react-helmet-async";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 export default function ComoFunciona() {
   return (
     <>
@@ -10,7 +12,9 @@ export default function ComoFunciona() {
         />
       </Helmet>
 
-      <main className="min-h-screen bg-[#f6f1ea] px-6 py-20 text-[#171717]">
+<Header />
+
+<main className="min-h-screen bg-[#f6f1ea] px-6 pb-20 pt-32 text-[#171717]">
       <section className="mx-auto max-w-4xl">
         <a href="/" className="mb-10 inline-flex text-sm text-[#6f432b]">
           ← Voltar para o início
@@ -24,7 +28,9 @@ export default function ComoFunciona() {
           Como funciona o atendimento psicológico online.
         </h1>
       </section>
-          </main>
+       </main>
+
+      <Footer />
     </>
   );
 }

@@ -1,10 +1,13 @@
+import { Helmet } from "react-helmet-async";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
 const WHATSAPP_NUMBER = "5562986286895";
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Olá, Vinicius. Gostaria de tirar uma dúvida sobre o atendimento psicológico."
 );
 
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
-import { Helmet } from "react-helmet-async";
 const faqs = [
   {
     question: "Como funciona o atendimento online?",
@@ -44,7 +47,9 @@ export default function Faq() {
         />
       </Helmet>
 
-      <main className="min-h-screen bg-[#f6f1ea] px-6 py-20 text-[#171717]">
+<Header />
+
+<main className="min-h-screen bg-[#f6f1ea] px-6 pb-20 pt-32 text-[#171717]">
       <section className="mx-auto max-w-4xl">
         <a
           href="/"
@@ -103,7 +108,9 @@ export default function Faq() {
           </a>
         </div>
       </section>
-          </main>
+               </main>
+
+      <Footer />
     </>
   );
 }
