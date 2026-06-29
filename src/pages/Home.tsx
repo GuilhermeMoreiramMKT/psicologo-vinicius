@@ -1,94 +1,13 @@
-import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const WHATSAPP_NUMBER = "5562986286895";
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Olá, Vinicius. Gostaria de saber mais sobre o atendimento psicológico."
 );
-import { Helmet } from "react-helmet-async";
+
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
-
-function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  return (
-    <header
-      className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled
-          ? "border-b border-[#bfae9e]/20 bg-[#f6f1ea]/95 shadow-sm backdrop-blur-md"
-          : "border-b border-transparent bg-transparent"
-      }`}
-    >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <a href="#inicio" className="flex items-center gap-4" aria-label="Início">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#8a5a3b] font-serif text-2xl text-[#6f432b]">
-            V
-          </div>
-
-          <div className="leading-none">
-            <strong className="block font-serif text-xl font-medium tracking-wide text-[#171717]">
-              Vinicius Rodrigues
-            </strong>
-            <span className="mt-1 block text-[10px] uppercase tracking-[0.35em] text-[#6f432b]">
-              Psicólogo Psicoterapeuta
-            </span>
-          </div>
-        </a>
-
-        <nav className="hidden items-center gap-9 text-sm text-[#3e3a35] lg:flex">
-          <a href="#sobre" className="transition hover:text-[#8a5a3b]">
-            Sobre
-          </a>
-          <a href="/formacao-e-experiencia" className="transition hover:text-[#8a5a3b]">
-  Formação
-</a>
-          <a href="/como-funciona" className="transition hover:text-[#8a5a3b]">
-            Como funciona
-          </a>
-          <a href="/abordagem" className="transition hover:text-[#8a5a3b]">
-            Abordagem
-          </a>
-          <a href="/faq" className="transition hover:text-[#8a5a3b]">
-            Perguntas frequentes
-          </a>
-          <a href="/contato" className="transition hover:text-[#8a5a3b]">
-            Contato
-          </a>
-        </nav>
-
-        <a
-          href={WHATSAPP_LINK}
-          target="_blank"
-          rel="noreferrer"
-          className="hidden rounded-full bg-[#8a5a3b] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#6f432b] md:inline-flex"
-          aria-label="Agendar atendimento pelo WhatsApp"
-        >
-          Agendar pelo WhatsApp
-        </a>
-
-        <a
-          href={WHATSAPP_LINK}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex rounded-full bg-[#8a5a3b] px-4 py-2 text-xs font-medium text-white transition hover:bg-[#6f432b] md:hidden"
-          aria-label="Agendar atendimento pelo WhatsApp"
-        >
-          WhatsApp
-        </a>
-      </div>
-    </header>
-  );
-}
 function Hero() {
   return (
     <main
@@ -211,68 +130,7 @@ Botão Agendar minha Primeira Sessão
   );
 }
 
-function Footer() {
-  return (
-    <footer id="contato" className="bg-[#efe8df] px-6 py-16">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 md:grid-cols-3 md:divide-x md:divide-[#bfae9e]">
-        <div className="md:pr-10">
-          <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#8a5a3b] font-serif text-2xl text-[#6f432b]">
-              V
-            </div>
 
-            <div>
-              <strong className="block font-serif text-xl font-medium text-[#171717]">
-                Vinicius Rodrigues
-              </strong>
-              <span className="mt-1 block text-[10px] uppercase tracking-[0.3em] text-[#6f432b]">
-                Psicólogo Psicoterapeuta
-              </span>
-            </div>
-          </div>
-
-          <p className="mt-5 text-sm text-[#3e3a35]">CRP 09/12077</p>
-        </div>
-
-        <div className="border-t border-[#bfae9e] pt-8 md:border-t-0 md:px-10 md:pt-0">
-          <h3 className="mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-[#6f432b]">
-            Contato
-          </h3>
-
-          <div className="space-y-3 text-sm text-[#3e3a35]">
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noreferrer"
-              className="block transition hover:text-[#8a5a3b]"
-            >
-              WhatsApp: 62 98628-6895
-            </a>
-
-            <a
-              href="https://instagram.com/psicviniciusrodrigues"
-              target="_blank"
-              rel="noreferrer"
-              className="block transition hover:text-[#8a5a3b]"
-            >
-              Instagram: @psicviniciusrodrigues
-            </a>
-          </div>
-        </div>
-
-        <div className="border-t border-[#bfae9e] pt-8 md:border-t-0 md:pl-10 md:pt-0">
-          <h3 className="mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-[#6f432b]">
-            Atendimento
-          </h3>
-
-          <p className="max-w-sm text-sm leading-7 text-[#3e3a35]">
-            Atendimento psicológico online para pacientes em todo o Brasil.
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
-}
 
 export default function Home() {
   return (
