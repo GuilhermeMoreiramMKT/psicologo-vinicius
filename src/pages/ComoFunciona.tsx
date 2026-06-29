@@ -50,12 +50,19 @@ export default function ComoFunciona() {
 
 <main className="relative min-h-screen overflow-hidden bg-[#f6f1ea] px-6 pb-24 pt-32 text-[#171717]">
       <div className="pointer-events-none absolute inset-0 z-0">
-  <div className="absolute left-0 top-0 h-[50%] w-full bg-black lg:h-[62%]">
+  <div className="absolute left-0 top-0 h-[50%] w-full overflow-hidden bg-black lg:h-[62%]">
     <img
       src="/images/atendimento-online-vinicius.jpg"
       alt=""
       aria-hidden="true"
-      className="h-full w-full object-contain object-top opacity-70 lg:object-cover lg:object-center"
+      className="absolute inset-0 h-full w-full scale-110 object-cover object-center opacity-55 blur-md"
+    />
+
+    <img
+      src="/images/atendimento-online-vinicius.jpg"
+      alt=""
+      aria-hidden="true"
+      className="relative z-10 h-full w-full object-contain object-center opacity-75 lg:object-cover"
       style={{
         WebkitMaskImage:
           "linear-gradient(to bottom, black 0%, black 68%, transparent 100%)",
@@ -63,15 +70,23 @@ export default function ComoFunciona() {
           "linear-gradient(to bottom, black 0%, black 68%, transparent 100%)",
       }}
     />
-    <div className="absolute inset-0 bg-black/45" />
+
+    <div className="absolute inset-0 z-20 bg-black/45" />
   </div>
 
-  <div className="absolute bottom-0 left-0 h-[50%] w-full bg-black lg:h-[62%]">
+  <div className="absolute bottom-0 left-0 h-[50%] w-full overflow-hidden bg-black lg:h-[62%]">
     <img
       src="/images/notebook-fones-atendimento.jpg"
       alt=""
       aria-hidden="true"
-      className="h-full w-full object-contain object-center opacity-70 lg:object-cover lg:object-center"
+      className="absolute inset-0 h-full w-full scale-110 object-cover object-center opacity-55 blur-md"
+    />
+
+    <img
+      src="/images/notebook-fones-atendimento.jpg"
+      alt=""
+      aria-hidden="true"
+      className="relative z-10 h-full w-full object-contain object-center opacity-75 lg:object-cover"
       style={{
         WebkitMaskImage:
           "linear-gradient(to bottom, transparent 0%, black 32%, black 100%)",
@@ -79,10 +94,11 @@ export default function ComoFunciona() {
           "linear-gradient(to bottom, transparent 0%, black 32%, black 100%)",
       }}
     />
-    <div className="absolute inset-0 bg-black/45" />
+
+    <div className="absolute inset-0 z-20 bg-black/45" />
   </div>
 
-  <div className="absolute left-0 top-[43%] h-[18%] w-full bg-gradient-to-b from-transparent via-black/40 to-transparent" />
+  <div className="absolute left-0 top-[43%] z-30 h-[18%] w-full bg-gradient-to-b from-transparent via-black/40 to-transparent" />
 </div>
 <section className="relative z-10 mx-auto max-w-7xl">
           <div className="max-w-6xl">
