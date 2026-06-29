@@ -48,20 +48,55 @@ export default function ComoFunciona() {
 
       <Header />
 
-      <main className="min-h-screen bg-[#f6f1ea] px-6 pb-24 pt-32 text-[#171717]">
-        <section className="mx-auto max-w-7xl">
+<main className="relative min-h-screen overflow-hidden bg-[#f6f1ea] px-6 pb-24 pt-32 text-[#171717]">
+        <div className="pointer-events-none absolute inset-0 z-0">
+  <div className="absolute left-0 top-0 h-[62%] w-full">
+    <img
+      src="/images/atendimento-online-vinicius.jpg"
+      alt=""
+      aria-hidden="true"
+      className="h-full w-full object-cover object-center opacity-100"
+      style={{
+        WebkitMaskImage:
+          "linear-gradient(to bottom, black 0%, black 68%, transparent 100%)",
+        maskImage:
+          "linear-gradient(to bottom, black 0%, black 68%, transparent 100%)",
+      }}
+    />
+    <div className="absolute inset-0 bg-black/45" />
+  </div>
+
+  <div className="absolute bottom-0 left-0 h-[62%] w-full">
+    <img
+      src="/images/notebook-fones-atendimento.jpg"
+      alt=""
+      aria-hidden="true"
+      className="h-full w-full object-cover object-center opacity-100"
+      style={{
+        WebkitMaskImage:
+          "linear-gradient(to bottom, transparent 0%, black 32%, black 100%)",
+        maskImage:
+          "linear-gradient(to bottom, transparent 0%, black 32%, black 100%)",
+      }}
+    />
+<div className="absolute inset-0 bg-black/35" />
+  </div>
+
+<div className="absolute left-0 top-[43%] h-[18%] w-full bg-gradient-to-b from-transparent via-black/40 to-transparent" />
+</div>
+<section className="relative z-10 mx-auto max-w-7xl">
           <div className="max-w-6xl">
-            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#6f432b]">
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-white">
               Como funciona
             </p>
 
-            <h1 className="font-serif text-5xl font-normal leading-tight tracking-[-0.04em] md:text-6xl lg:text-7xl">
+            <h1 className="font-serif text-5xl font-normal leading-tight tracking-[-0.04em] text-white md:text-6xl lg:text-7xl">
               O atendimento online é simples, reservado e conduzido com seriedade.
             </h1>
 
             <div className="my-8 h-px w-24 bg-[#8a5a3b]" />
 
-            <p className="max-w-4xl text-lg leading-8 text-[#3e3a35]">
+            <p className="max-w-4xl text-lg leading-8 text-[#fffdfc]">
               A psicoterapia online permite que você tenha um espaço de escuta
               profissional sem precisar se deslocar. O processo acontece por
               videochamada, com horário combinado e cuidado para preservar a
@@ -73,7 +108,7 @@ export default function ComoFunciona() {
             {steps.map((step, index) => (
               <article
                 key={step.title}
-                className="rounded-[2rem] border border-[#bfae9e]/40 bg-[#fffdfc] p-8 shadow-sm md:p-10"
+                className="rounded-[2rem] border border-[#bfae9e]/40 bg-[#fffdfc]/70 p-8 shadow-sm md:p-10"
               >
                 <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#6f432b]">
                   Etapa {index + 1}
@@ -90,7 +125,7 @@ export default function ComoFunciona() {
             ))}
           </div>
 
-          <div className="mt-10 rounded-[2rem] border border-[#bfae9e]/40 bg-[#efe8df] p-8 shadow-sm md:p-10">
+          <div className="mt-10 rounded-[2rem] border border-[#bfae9e]/40 bg-[#fffdfc]/70 p-8 shadow-sm md:p-10">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#6f432b]">
               Informações importantes
             </p>
