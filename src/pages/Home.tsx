@@ -92,7 +92,7 @@ function VideoSection() {
   <div className="aspect-video w-full">
   <iframe
   className="h-full w-full"
-  src="https://www.youtube.com/embed/G-qWD7WXTa4"
+  src="https://www.youtube.com/watch?v=6KJ4EiG4yzE"
   title="Vídeo de apresentação de Vinicius Rodrigues"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   allowFullScreen
