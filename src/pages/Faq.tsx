@@ -10,32 +10,56 @@ const WHATSAPP_MESSAGE = encodeURIComponent(
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 const faqs = [
   {
-    question: "Como funciona o atendimento online?",
+    question: "Como funciona o valor das sessões?",
     answer:
-      "O atendimento online acontece por videochamada, em um horário previamente combinado. Você precisa apenas de um local reservado, boa conexão com a internet e um dispositivo com câmera e áudio.",
+      "O valor da primeira consulta é de R$ 250,00. Caso decidamos dar continuidade ao processo terapêutico, o valor posterior das sessões será definido em conjunto, considerando a frequência do acompanhamento e a realidade financeira de cada pessoa. Acredito que essa conversa também deve acontecer com clareza, respeito e transparência.",
   },
   {
-    question: "O atendimento online tem a mesma validade do presencial?",
+    question: "Preciso saber exatamente o que dizer na primeira sessão?",
     answer:
-      "Sim. O atendimento psicológico online é uma modalidade reconhecida, desde que realizado por profissional habilitado e seguindo as normas éticas da profissão.",
+      "Não. Você não precisa chegar nessa primeira sessão sabendo exatamente o que falar. Meu trabalho é fazer perguntas que você consiga responder, nada complexo. O medo de não saber o que dizer faz parte do processo. Meu papel é conduzir essa conversa com cuidado, respeitando o seu tempo e ajudando você a compreender aquilo que hoje ainda pode ser difícil colocar em palavras.",
   },
   {
-    question: "Quanto tempo dura uma sessão?",
+    question: "E se a terapia não funcionar para mim?",
     answer:
-      "A duração da sessão pode variar conforme a organização do atendimento, mas geralmente segue um tempo previamente combinado entre profissional e paciente.",
-  },
-  {
-    question: "Para quem a psicoterapia é indicada?",
-    answer:
-      "A psicoterapia pode ajudar pessoas que desejam compreender melhor suas emoções, seus relacionamentos, seus comportamentos e os momentos de sofrimento ou conflito que atravessam.",
+      "Cada pessoa tem seu próprio tempo e sua própria forma de vivenciar a terapia. Meu compromisso nunca será manter um paciente em acompanhamento a qualquer custo. Se eu entender que o processo não está trazendo os resultados esperados ou que outro tipo de cuidado pode ser mais adequado, conversarei com você de forma clara, ética e responsável para buscarmos o melhor caminho.",
   },
   {
     question: "Como faço para agendar?",
     answer:
-      "O agendamento pode ser feito pelo WhatsApp. Após o contato inicial, são alinhadas as informações sobre disponibilidade, formato do atendimento e início do processo terapêutico.",
+      "Basta enviar uma mensagem pelo WhatsApp. Sua mensagem é respondida diretamente por mim, sem intermediários ou respostas automáticas. Responderei assim que possível para conversarmos sobre horários e esclarecer qualquer dúvida.",
+  },
+  {
+    question: "Como funciona o atendimento psicológico online?",
+    answer:
+      "O atendimento acontece por videochamada, em horário previamente combinado. Para a sessão, é importante estar em um local reservado, com privacidade, boa conexão com a internet e disponibilidade para falar com tranquilidade.",
+  },
+  {
+    question: "O atendimento online é seguro?",
+    answer:
+      "Sim. O atendimento psicológico online deve seguir os mesmos princípios éticos da prática presencial, incluindo sigilo profissional, cuidado com a privacidade e responsabilidade na condução do processo terapêutico.",
+  },
+  {
+    question: "Quem pode fazer psicoterapia online?",
+    answer:
+      "A psicoterapia online pode ser indicada para adultos que desejam compreender melhor suas emoções, seus relacionamentos, seus conflitos e momentos de sofrimento psíquico. Em algumas situações específicas, pode ser necessário avaliar se o formato online é o mais adequado.",
+  },
+  {
+    question: "Com que frequência acontecem as sessões?",
+    answer:
+      "A frequência costuma ser combinada entre psicólogo e paciente, considerando a necessidade do processo terapêutico, a disponibilidade de horários e o momento vivido pela pessoa.",
+  },
+  {
+    question: "Quanto tempo dura uma sessão?",
+    answer:
+      "A duração da sessão é alinhada antes do início do acompanhamento. As informações sobre tempo, valor, frequência e funcionamento são combinadas no contato inicial.",
+  },
+  {
+    question: "A psicoterapia é indicada apenas para quem está em crise?",
+    answer:
+      "Não. Muitas pessoas procuram psicoterapia em momentos de crise, mas o processo também pode ajudar no autoconhecimento, na compreensão de padrões emocionais e na forma como a pessoa se relaciona consigo mesma e com os outros.",
   },
 ];
-
 export default function Faq() {
   return (
     <>

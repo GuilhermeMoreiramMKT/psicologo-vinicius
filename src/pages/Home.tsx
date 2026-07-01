@@ -87,18 +87,30 @@ function Hero() {
 function VideoSection() {
   return (
     <section id="sobre" className="bg-[#fffdfc] px-6 py-24">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
-<div className="order-2 overflow-hidden rounded-[2rem] bg-[#171717] shadow-2xl shadow-black/10 lg:order-1">
-  <div className="aspect-video w-full">
-  <iframe
-  className="h-full w-full"
-  src="https://www.youtube.com/watch?v=6KJ4EiG4yzE"
-  title="Vídeo de apresentação de Vinicius Rodrigues"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowFullScreen
-/>
-  </div>
+      <div className="mx-auto grid max-w-[1500px] grid-cols-1 items-center gap-14 lg:grid-cols-[1.35fr_0.65fr]">
+        <div className="order-2 overflow-hidden rounded-[2rem] bg-[#171717] shadow-2xl shadow-black/10 lg:order-1">
+          <div className="aspect-video w-full">
+            <iframe
+              className="h-full w-full"
+              src="https://www.youtube.com/embed/6KJ4EiG4yzE"
+              title="Vídeo de apresentação de Vinicius Rodrigues"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+
+        <div className="bg-[#171717]">
+  <a
+    href={WHATSAPP_LINK}
+    target="_blank"
+    rel="noreferrer"
+    className="flex w-full items-center justify-center bg-[#8a5a3b] px-8 py-6 text-base font-medium !text-white transition hover:bg-[#6f432b]"
+    aria-label="Agendar primeira sessão pelo WhatsApp"
+  >
+    Agendar minha primeira sessão
+  </a>
 </div>
+        </div>
 
         <div className="order-1 lg:order-2">
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#6f432b]">
@@ -112,26 +124,20 @@ function VideoSection() {
           <div className="my-7 h-px w-20 bg-[#8a5a3b]" />
 
           <div className="space-y-5 text-base leading-8 text-[#3e3a35]">
-            <p>
-              Prazer, eu sou Vinicius Rodrigues.
-            </p>
+            <p>Prazer, eu sou Vinicius Rodrigues.</p>
 
             <p>
-              Estudo, supervisão e cuidado pessoal são parte do compromisso que tenho com quem atendo. Não acredito em cuidar do outro sem continuar aprendendo e sem também cuidar de mim. Isso não é perfeição; é responsabilidade com o tratamento.
-
-Botão Agendar minha Primeira Sessão
-
+              Estudo, supervisão e cuidado pessoal são parte do compromisso que
+              tenho com quem atendo. Não acredito em cuidar do outro sem
+              continuar aprendendo e sem também cuidar de mim. Isso não é
+              perfeição; é responsabilidade com o tratamento.
             </p>
           </div>
-
         </div>
       </div>
     </section>
   );
 }
-
-
-
 export default function Home() {
   return (
     <>

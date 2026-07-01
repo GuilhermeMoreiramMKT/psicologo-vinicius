@@ -1,16 +1,9 @@
 import { useEffect } from "react";
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Faq from "./pages/Faq";
-import ComoFunciona from "./pages/ComoFunciona";
 import Abordagem from "./pages/Abordagem";
-import Contato from "./pages/Contato";
 import FormacaoExperiencia from "./pages/FormacaoExperiencia";
 
 function ScrollRevealSetup() {
@@ -20,24 +13,23 @@ function ScrollRevealSetup() {
     let elements: HTMLElement[] = [];
     let ticking = false;
 
-   const selector = [
-  "main section > div",
-  "main article",
-  "main aside > div",
-  "main li",
-  "main h1",
-  "main h2",
-
-  "section > div",
-  "section article",
-  "section aside > div",
-  "section li",
-  "section h1",
-  "section h2",
-].join(",");
+    const selector = [
+      "main section > div",
+      "main article",
+      "main aside > div",
+      "main li",
+      "main h1",
+      "main h2",
+      "section > div",
+      "section article",
+      "section aside > div",
+      "section li",
+      "section h1",
+      "section h2",
+    ].join(",");
 
     const revealElements = () => {
-      const triggerPoint = window.innerHeight * 0.88;
+      const triggerPoint = window.innerHeight * 0.75;
 
       elements.forEach((element) => {
         const elementTop = element.getBoundingClientRect().top;
@@ -69,8 +61,6 @@ function ScrollRevealSetup() {
         );
       });
 
-      console.log("Itens com animação:", elements.length);
-
       window.requestAnimationFrame(() => {
         window.requestAnimationFrame(() => {
           revealElements();
@@ -90,6 +80,7 @@ function ScrollRevealSetup() {
 
   return null;
 }
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -97,10 +88,8 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/atendimento" element={<Abordagem />} />
         <Route path="/faq" element={<Faq />} />
-        <Route path="/como-funciona" element={<ComoFunciona />} />
-        <Route path="/abordagem" element={<Abordagem />} />
-        <Route path="/contato" element={<Contato />} />
         <Route
           path="/formacao-e-experiencia"
           element={<FormacaoExperiencia />}
