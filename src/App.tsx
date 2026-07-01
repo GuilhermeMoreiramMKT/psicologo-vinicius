@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Faq from "./pages/Faq";
 import Abordagem from "./pages/Abordagem";
 import FormacaoExperiencia from "./pages/FormacaoExperiencia";
+import SalaEspera from "./pages/SalaEspera";
 
 function ScrollRevealSetup() {
   const location = useLocation();
@@ -94,6 +95,7 @@ export default function App() {
           path="/formacao-e-experiencia"
           element={<FormacaoExperiencia />}
         />
+<Route path="/sala-de-espera" element={<SalaEspera />} />
       </Routes>
     </BrowserRouter>
   );

@@ -62,22 +62,21 @@ export default function Footer() {
         </div>
 
         <div className="border-[#bfae9e]/40 lg:border-l lg:pl-14">
-          <p className="mb-6 text-xs font-semibold uppercase tracking-[0.35em] text-[#6f432b]">
-            Atendimento
-          </p>
+  <p className="mb-6 text-xs font-semibold uppercase tracking-[0.35em] text-[#6f432b]">
+    Atendimento
+  </p>
 
-          <p className="max-w-sm text-sm leading-7 text-[#3e3a35]">
-            Atendimento psicológico online para pacientes em todo o Brasil.
-          </p>
-
-          <a
-            href="/atendimento"
-            className="mt-6 inline-flex items-center justify-center rounded-full border border-[#8a5a3b]/50 px-6 py-3 text-sm font-medium text-[#6f432b] transition hover:bg-[#8a5a3b] hover:!text-white"
-            aria-label="Ir para a página de atendimento"
-          >
-            Atendimento
-          </a>
-        </div>
+  <p className="max-w-sm text-sm leading-7 text-[#3e3a35]">
+    Atendimento psicológico online para pacientes em todo o Brasil.{" "}
+    <a
+      href="/atendimento"
+      className="font-medium text-[#6f432b] underline underline-offset-4 transition hover:text-[#8a5a3b]"
+      aria-label="Ir para a página de atendimento"
+    >
+      Clique aqui
+    </a>
+  </p>
+</div>
       </div>
     </footer>
   );
