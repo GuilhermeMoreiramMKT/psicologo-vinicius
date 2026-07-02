@@ -7,6 +7,8 @@ import Abordagem from "./pages/Abordagem";
 import FormacaoExperiencia from "./pages/FormacaoExperiencia";
 import SalaEspera from "./pages/SalaEspera";
 
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
+
 function ScrollRevealSetup() {
   const location = useLocation();
 
@@ -84,19 +86,18 @@ function ScrollRevealSetup() {
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <ScrollRevealSetup />
+   <BrowserRouter>
+  <ScrollRevealSetup />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/atendimento" element={<Abordagem />} />
-        <Route path="/faq" element={<Faq />} />
-        <Route
-          path="/formacao-e-experiencia"
-          element={<FormacaoExperiencia />}
-        />
-<Route path="/sala-de-espera" element={<SalaEspera />} />
-      </Routes>
-    </BrowserRouter>
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/atendimento" element={<Abordagem />} />
+    <Route path="/faq" element={<Faq />} />
+    <Route path="/formacao-e-experiencia" element={<FormacaoExperiencia />} />
+    <Route path="/sala-de-espera" element={<SalaEspera />} />
+  </Routes>
+
+  <FloatingWhatsApp />
+</BrowserRouter>
   );
 }
