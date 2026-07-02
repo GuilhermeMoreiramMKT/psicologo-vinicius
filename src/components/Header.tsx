@@ -8,10 +8,11 @@ const WHATSAPP_MESSAGE = encodeURIComponent(
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
 const MENU_LINKS = [
+  { label: "Sobre", href: "/#sobre" },
   { label: "Atendimento", href: "/atendimento" },
-  { label: "Sala de Espera", href: "/sala-de-espera" },
-  { label: "Perguntas Frequentes", href: "/faq" },
+    { label: "Perguntas Frequentes", href: "/faq" },
   { label: "Formação", href: "/formacao-e-experiencia" },
+  { label: "Sala de Espera", href: "/sala-de-espera" },
 ];
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
