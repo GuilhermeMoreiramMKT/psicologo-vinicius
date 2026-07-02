@@ -112,8 +112,7 @@ export default function SalaEspera() {
             ))}
           </div>
 
-        <div className="mt-14">
- <div className="flex w-full items-center justify-center bg-[#a8732a] px-6 py-8 text-center">
+        <div className="mt-14 flex w-full items-center justify-center bg-[#a8732a] px-6 py-8 text-center">
   <div className="max-w-3xl">
     <p className="text-base font-semibold leading-7 text-white md:text-lg">
       Se interessou e quer acesso a um desses materiais para ler ou assistir
@@ -122,20 +121,19 @@ export default function SalaEspera() {
         href={WHATSAPP_LINK}
         target="_blank"
         rel="noreferrer"
-        className="inline-flex items-center gap-1 underline decoration-white/90 decoration-2 underline-offset-4 transition hover:text-white/80"
+        className="inline underline decoration-white/90 decoration-2 underline-offset-4 transition hover:text-white/80"
         aria-label="Pedir material pelo WhatsApp"
       >
         Me envie uma mensagem pelo WhatsApp
-        <FaWhatsapp className="text-xl text-[#25D366]" />
+        <FaWhatsapp className="ml-1 inline-block align-[-2px] text-xl text-[#25D366]" />
       </a>
       .
     </p>
 
-    <p className="mt-1 text-base leading-7 text-white/90">
+    <p className="mt-2 text-base leading-7 text-white/90">
       Envio com prazer.
     </p>
   </div>
-</div>
 </div>
         </section>
       </main>
