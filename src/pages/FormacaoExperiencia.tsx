@@ -7,7 +7,7 @@ export default function FormacaoExperiencia() {
     "Graduação em Psicologia",
     "Formação em Psicanálise",
     "Aperfeiçoamento em Psicopatologia",
-    "Pós-graduando em Psicoterapia Breve",
+    "Pós-graduando em Psicoterapia - Breve",
   ];
 
   return (
