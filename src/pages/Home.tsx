@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { FaWhatsapp } from "react-icons/fa";
 
 const WHATSAPP_NUMBER = "5562986286895";
 const WHATSAPP_MESSAGE = encodeURIComponent(
@@ -51,25 +52,26 @@ function Hero() {
 
          <div className="mt-10 flex w-full max-w-[520px] flex-col gap-5 sm:flex-row sm:items-center">
   <a
-    href={WHATSAPP_LINK}
-    target="_blank"
-    rel="noreferrer"
-    className="inline-flex w-full items-center justify-center rounded-full bg-[#8a5a3b] px-8 py-4 text-sm font-medium !text-white transition hover:-translate-y-0.5 hover:bg-[#6f432b] sm:w-auto"
-    aria-label="Agendar atendimento pelo WhatsApp"
-  >
-    Fale comigo pelo WhatsApp
-  </a>
+  href={WHATSAPP_LINK}
+  target="_blank"
+  rel="noreferrer"
+  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#8a5a3b] px-8 py-4 text-sm font-medium !text-white transition hover:-translate-y-0.5 hover:bg-[#6f432b] sm:w-auto"
+  aria-label="Agendar atendimento pelo WhatsApp"
+>
+  <FaWhatsapp className="text-lg" />
+  Fale comigo pelo WhatsApp
+</a>
 
-  <div className="flex w-full items-center justify-start gap-3 rounded-full border border-[#bfae9e]/50 bg-[#fffdfc]/50 px-5 py-4 text-sm text-[#3e3a35] sm:w-auto sm:border-0 sm:bg-transparent sm:p-0">
-    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#bfae9e] text-[#6f432b]">
-      ◎
-    </span>
-    <span>
-      Atendimento online
-      <br />
-      para todo o Brasil
-    </span>
-  </div>
+ <div className="flex w-full items-center justify-center gap-3 rounded-full border border-[#bfae9e]/50 bg-[#fffdfc]/50 px-5 py-4 text-sm text-[#3e3a35] sm:w-auto sm:justify-start sm:border-0 sm:bg-transparent sm:p-0">
+  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#bfae9e] text-[#6f432b]">
+    ◎
+  </span>
+  <span className="text-left leading-6">
+    Atendimento online
+    <br />
+    para todo o Brasil
+  </span>
+</div>
 </div>
                     <div className="mt-12 overflow-hidden rounded-t-[140px] bg-[#e8ded2] lg:hidden">
             <img
@@ -100,15 +102,16 @@ function VideoSection() {
           </div>
 
         <div className="bg-[#171717]">
-  <a
-    href={WHATSAPP_LINK}
-    target="_blank"
-    rel="noreferrer"
-    className="flex w-full items-center justify-center bg-[#8a5a3b] px-8 py-6 text-base font-medium !text-white transition hover:bg-[#6f432b]"
-    aria-label="Agendar primeira sessão pelo WhatsApp"
-  >
-    Agendar minha primeira sessão
-  </a>
+ <a
+  href={WHATSAPP_LINK}
+  target="_blank"
+  rel="noreferrer"
+  className="flex w-full items-center justify-center gap-2 bg-[#8a5a3b] px-8 py-6 text-base font-medium !text-white transition hover:bg-[#6f432b]"
+  aria-label="Agendar primeira sessão pelo WhatsApp"
+>
+  <FaWhatsapp className="text-lg" />
+  Agendar minha primeira sessão
+</a>
 </div>
         </div>
 
